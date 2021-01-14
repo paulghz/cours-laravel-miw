@@ -16,3 +16,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', 'PagesController@home')->name('home');
 
 Route::get('/hello/{name}', 'PagesController@hello')->name('hello');
+
+
+Route::get('/series', 'SeriesController@index')->name('series_index');
+Route::get('/serie/{serie_id}', 'SeriesController@serie')->name('serie');
