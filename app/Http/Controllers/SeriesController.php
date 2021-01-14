@@ -43,4 +43,16 @@ class SeriesController extends Controller
     		'serie' => $serie
     	]);
     }
+
+    public function add() {
+
+    	return view('pages.serie_add');
+
+    }
+
+    public function postAdd() {
+
+    	dd('post add');
+
+    }
 }

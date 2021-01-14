@@ -19,7 +19,12 @@ Route::get('/hello/{name}', 'PagesController@hello')->name('hello');
 
 
 Route::get('/series', 'SeriesController@index')->name('series_index');
+
+Route::get('/serie/add', 'SeriesController@add')->name('serie_add');
+Route::post('/serie/add', 'SeriesController@postAdd')->name('serie_add_post');
+
 Route::get('/serie/{serie_id}', 'SeriesController@serie')->name('serie');
+
 
 
 Route::get('/users', 'UsersController@index')->name('users_index');
