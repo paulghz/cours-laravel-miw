@@ -34,7 +34,10 @@ class SeriesController extends Controller
 
     public function serie($serie_id) {
 
-    	$serie = Serie::where('id', $serie_id)->first();
+    	// $serie = Serie::where('id', $serie_id)->firstOrFail();
+    	$serie = Serie::findOrFail($serie_id);
+
+//    	if(is_null($serie)) abort(404);
 
     	return view('pages.serie', [
     		'serie' => $serie
