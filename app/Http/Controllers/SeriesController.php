@@ -50,9 +50,34 @@ class SeriesController extends Controller
 
     }
 
-    public function postAdd() {
+    public function postAdd(Request $request) {
 
-    	dd('post add');
+    	//if(!$request->filled('title')) return redirect()->back();
+
+    	//dd($request->all());
+
+    	$this->validate($request, [
+    		'title' => 'required',
+    		'released_at' => 'nullable|date',
+    		'creator_name' => 'nullable|min:2',
+
+    	]);
+
+    	// $serie->title = $request->input('title');
+    	// $serie->released_at = $request->input('released_at');
+    	// $serie->creator_name = $request->input('creator_name');
+
+    	// $serie->save();
+
+
+    	// $serie = new Serie();
+    	// $serie->fill($request->all());
+
+
+    	$serie = Serie::create($request->all());
+
+
+    	return redirect()->back()->with('success', 'Série "'.$serie->title.'" insérée');
 
     }
 }
