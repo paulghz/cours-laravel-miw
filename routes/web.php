@@ -20,3 +20,6 @@ Route::get('/hello/{name}', 'PagesController@hello')->name('hello');
 
 Route::get('/series', 'SeriesController@index')->name('series_index');
 Route::get('/serie/{serie_id}', 'SeriesController@serie')->name('serie');
+
+
+Route::get('/users', 'UsersController@index')->name('users_index');
