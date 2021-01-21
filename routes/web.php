@@ -31,3 +31,13 @@ Route::get('/users', 'UsersController@index')->name('users_index');
 
 Route::get('/user/delete', 'UsersController@delete')->name('user_delete');
 Route::get('/user/restore', 'UsersController@restore')->name('user_restore');
+
+//Auth::routes();
+Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
+Route::post('login', 'Auth\LoginController@login');
+Route::get('logout', 'Auth\LoginController@logout')->name('logout');
+Route::get('register', 'Auth\RegisterController@showRegistrationForm')->name('register');
+Route::post('register', 'Auth\RegisterController@register');
+
+
+Route::get('/home', 'HomeController@index')->name('home');
