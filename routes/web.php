@@ -25,8 +25,6 @@ Route::post('/serie/add', 'SeriesController@postAdd')->name('serie_add_post');
 
 Route::get('/serie/{serie_id}', 'SeriesController@serie')->name('serie');
 
-
-
 Route::get('/users', 'UsersController@index')->name('users_index');
 
 Route::get('/user/delete', 'UsersController@delete')->name('user_delete');
@@ -41,3 +39,14 @@ Route::post('register', 'Auth\RegisterController@register');
 
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/admin', 'AdminController@index')->name('admin');
+
+//Route::get('/home', 'HomeController@index')->middleware('auth')->name('home');
+/*
+Route::middleware(['auth'])->group(function () {
+	//Route::get('/home', 'HomeController@index')->name('home');
+	//...
+	//...
+});
+*/
