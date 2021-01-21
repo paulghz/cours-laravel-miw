@@ -13,4 +13,8 @@ class Season extends Model
     public function episodes() {
     	return $this->hasMany(Episode::class);
     }
+
+    public function comments() {
+        return $this->morphMany(Comment::class, 'commented');
+    }
 }

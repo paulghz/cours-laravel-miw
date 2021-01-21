@@ -18,4 +18,8 @@ class Serie extends Model
     public function actors() {
     	return $this->belongsToMany(Actor::class);
     }
+
+    public function comments() {
+        return $this->morphMany(Comment::class, 'commented');
+    }
 }

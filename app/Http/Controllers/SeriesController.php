@@ -75,7 +75,6 @@ class SeriesController extends Controller
     	// $serie = new Serie();
     	// $serie->fill($request->all());
 
-
     	$serie = Serie::create($request->all());
 
     	// DB::table('actor_serie')->insert(['actor_id'=> $actor_id, 'serie_id' => $serie->id]);
