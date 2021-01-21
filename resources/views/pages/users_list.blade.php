@@ -8,8 +8,13 @@
 		@foreach($users as $user)
 						
 			<li>
-				{{ $user->name }} 
-				<a class="text-xs cursor-pointer hover:text-red-500" href="{{ route('user_delete', ['user_id' => $user->id]) }}">(suppr.)</a>
+				{{ $user->name }}
+
+				@if(!$user->trashed())
+					<a class="text-xs cursor-pointer hover:text-red-500" href="{{ route('user_delete', ['user_id' => $user->id]) }}">(suppr.)</a>
+				@else
+					<a class="text-xs cursor-pointer hover:text-green-500" href="{{ route('user_restore', ['user_id' => $user->id]) }}">(restore)</a>
+				@endif
 			</li>
 
 		@endforeach

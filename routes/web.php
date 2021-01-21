@@ -30,3 +30,4 @@ Route::get('/serie/{serie_id}', 'SeriesController@serie')->name('serie');
 Route::get('/users', 'UsersController@index')->name('users_index');
 
 Route::get('/user/delete', 'UsersController@delete')->name('user_delete');
+Route::get('/user/restore', 'UsersController@restore')->name('user_restore');
