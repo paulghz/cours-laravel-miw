@@ -14,4 +14,8 @@ class Serie extends Model
     public function seasons() {
     	return $this->hasMany(Season::class);
     }
+
+    public function actors() {
+    	return $this->belongsToMany(Actor::class);
+    }
 }

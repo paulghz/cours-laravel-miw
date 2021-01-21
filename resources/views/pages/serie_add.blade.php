@@ -33,6 +33,15 @@
 			<p class="font-bold text-red-500">{{ $errors->first('creator_name') }}</p>
 		@endif
 
+		<div class="flex flex-wrap">
+			@foreach(\App\Actor::get() as $actor)
+				<div class="w-full lg:w-1/6">
+					<input id="actor_{{$actor->id}}" type="checkbox" name="actors[]" value="{{$actor->id}}">
+					<label for="actor_{{$actor->id}}">{{ $actor->name }}</label>
+				</div>
+			@endforeach
+		</div>
+
 
 		<input class="block w-auto mt-4 leading-none cursor-pointer px-3 py-2 bg-blue-500 hover:bg-blue-600 text-white rounded-full" type="submit" name="Valider">
 		

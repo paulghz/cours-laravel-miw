@@ -60,8 +60,10 @@ class SeriesController extends Controller
     		'title' => 'required',
     		'released_at' => 'nullable|date',
     		'creator_name' => 'nullable|min:2',
+    		//'actors' => 'array|min:1'
 
     	]);
+
 
     	// $serie->title = $request->input('title');
     	// $serie->released_at = $request->input('released_at');
@@ -75,6 +77,12 @@ class SeriesController extends Controller
 
 
     	$serie = Serie::create($request->all());
+
+    	// DB::table('actor_serie')->insert(['actor_id'=> $actor_id, 'serie_id' => $serie->id]);
+
+    	//$serie->actors()->attach($request->input('actors'));
+    	//$serie->actors()->detach($request->input('actors'));
+    	$serie->actors()->sync($request->input('actors'));
 
 
     	return redirect()->back()->with('success', 'Série "'.$serie->title.'" insérée');
