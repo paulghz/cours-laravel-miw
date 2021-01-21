@@ -47,14 +47,14 @@ class TestComment extends Command
             'content' => 'Ceci est un commentaire...'
         ]);
 
-        // $serie = \App\Serie::find(1);
-        // $serie->comments()->save($comment);
+        $serie = \App\Serie::find(1);
+        $serie->comments()->save($comment);
 
         // $season = \App\Season::find(1);
         // $season->comments()->save($comment);
 
-        $actor = \App\Actor::find(51);
-        $actor->comments()->save($comment);
+        // $actor = \App\Actor::find(51);
+        // $actor->comments()->save($comment);
 
 
         return 0;

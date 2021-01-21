@@ -28,3 +28,5 @@ Route::get('/serie/{serie_id}', 'SeriesController@serie')->name('serie');
 
 
 Route::get('/users', 'UsersController@index')->name('users_index');
+
+Route::get('/user/delete', 'UsersController@delete')->name('user_delete');

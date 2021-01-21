@@ -7,7 +7,10 @@
 	<ul>
 		@foreach($users as $user)
 						
-			<li>{{ $user->name }}</li>
+			<li>
+				{{ $user->name }} 
+				<a class="text-xs cursor-pointer hover:text-red-500" href="{{ route('user_delete', ['user_id' => $user->id]) }}">(suppr.)</a>
+			</li>
 
 		@endforeach
 	</ul>
