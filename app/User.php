@@ -8,6 +8,8 @@ use Illuminate\Notifications\Notifiable;
 
 use Illuminate\Database\Eloquent\SoftDeletes;
 
+use App\Rights\Role;
+
 class User extends Authenticatable
 {
     use Notifiable;
@@ -46,5 +48,10 @@ class User extends Authenticatable
 
     public function last_comment() {
         return $this->hasOne(Comment::class)->orderByDesc('created_at');
+    }
+
+    public function roles() {
+        return $this->belongsToMany(Role::class);
+        //return $this->belongsToMany(Role::class, 'role_user', 'user_id', 'role_id');
     }
 }
