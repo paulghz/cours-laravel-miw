@@ -30,6 +30,11 @@ class SeriesController extends Controller
     	return view('pages.series_list', [
     		'series' => $series
     	]);
+
+
+        //$query->...->where('name', 'quelque chose')->...
+        //est égal à
+        //$query->whereName('quelque chose')->...
     }
 
     public function serie($serie_id) {

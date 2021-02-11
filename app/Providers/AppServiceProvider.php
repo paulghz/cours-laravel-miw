@@ -31,6 +31,8 @@ class AppServiceProvider extends ServiceProvider
         //Paginator::defaultView('view-name');
         //Paginator::defaultSimpleView('view-name');
 
+        //remplissage de Session...
+
         Relation::morphMap([
             'serie' => 'App\Serie',
             'season' => 'App\Season',

@@ -42,6 +42,11 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/admin', 'AdminController@index')->name('admin');
 
+
+
+Route::get('/messages/users_list', 'MessagesController@users_list')->name('users_list');
+Route::get('/messages/conversation/{to_id}', 'MessagesController@conversation')->name('conversation');
+Route::post('/messages/add', 'MessagesController@postMessage')->name('postMessage');
 //Route::get('/home', 'HomeController@index')->middleware('auth')->name('home');
 /*
 Route::middleware(['auth'])->group(function () {

@@ -26,5 +26,8 @@ class PagesController extends Controller
 	    ]);
     }
 
-    // http://localhost/l
+    // if (!session()->has('currency')) session(['currency' => 'usd']);
+    
+    // Store a piece of data in the session...
+    //session(['currency' => 'eur']);
 }
