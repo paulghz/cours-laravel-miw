@@ -60,6 +60,8 @@ class MessagesController extends Controller
 			'from_id' => Auth::id(),
 		]);
 
+		return redirect()->back();
+
     	//$user_to = User::findOrFail($request->input('to_id'));
 
     	//Auth::id();
